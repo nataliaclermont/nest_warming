@@ -1,0 +1,18 @@
+"flag","message","_index","_uuid","visit_date","visit_dt","site","trap_color","observer","duration_min","trap_notes"
+"DUP_SAME_DAY","Same trap submitted >1x on same date - check for accidental re-submission",7,"65344b6a-3008-4963-bd75-a3fa3db527ed",2026-05-15,2026-05-15 12:37:00,"A3","B","Peace O",4.59468332926432,NA
+"DUP_SAME_DAY","Same trap submitted >1x on same date - check for accidental re-submission",12,"98d97a61-a5e0-4b4e-bc00-de086382ee38",2026-05-15,2026-05-15 12:48:00,"A3","B","Natalia C",12.2685666680336,"There is some water seeping out between the two blocks. Roof may need to be resealed"
+"DUP_SAME_DAY","Same trap submitted >1x on same date - check for accidental re-submission",63,"c0edebcd-636d-47f1-90ea-875c0562f18a",2026-05-22,2026-05-22 11:25:00,"A3","B","Natalia C",3.30921666622162,NA
+"DUP_SAME_DAY","Same trap submitted >1x on same date - check for accidental re-submission",72,"155b1d9c-e374-4f43-8083-0e48d6e15e9d",2026-05-22,2026-05-22 11:50:00,"A3","B","Natalia C",1.12066667079926,NA
+"DUP_SAME_DAY","Same trap submitted >1x on same date - check for accidental re-submission",28,"2899ebd3-6d35-420c-bc6c-a88d21e8d361",2026-05-18,2026-05-18 13:50:00,"A3","W","Natalia C Jessica F",3.07651666800181,NA
+"DUP_SAME_DAY","Same trap submitted >1x on same date - check for accidental re-submission",30,"20f67e07-63b4-4c8e-95bd-347869ba2de9",2026-05-18,2026-05-18 14:02:00,"A3","W","Natalia C Jessica F",1.64841667016347,NA
+"SHORT_DURATION","start->end < 1 min - partial form / re-submission?",94,"cf5bd378-2b7f-46b7-98d2-88e5ab632263",2026-05-25,2026-05-25 11:45:00,"B4","T","Natalia C",0.923499997456869,NA
+"LONG_DURATION","start->end > 30 min - form left open?",1,"e0bcb5d9-9b6c-458e-b009-82d3bc5df4d9",2026-05-15,2026-05-15 12:12:00,"A1","W","Natalia C Peace O",65.8313833355904,NA
+"LONG_DURATION","start->end > 30 min - form left open?",4,"5a6e4426-f29d-4328-a31c-0db3ed67812f",2026-05-15,2026-05-15 12:18:00,"A2","T","Natalia C",89.7648166696231,NA
+"LONG_DURATION","start->end > 30 min - form left open?",24,"b83775f3-10c9-42e3-8ec6-b3e42193a26b",2026-05-15,2026-05-15 13:30:00,"B1","W","Natalia C",2814.20296666622,NA
+"LONG_DURATION","start->end > 30 min - form left open?",35,"c706cfd9-9705-46b9-a31a-3ccb32fe741d",2026-05-20,2026-05-20 11:05:00,"A2","T","Peace O",7055.53206666311,NA
+"LONG_DURATION","start->end > 30 min - form left open?",79,"e869bd01-61f1-4011-b60a-e82cac132669",2026-05-25,2026-05-25 11:08:00,"A2","T","Peace O",7141.03703333139,NA
+"RAPID_SUBSITE_HOP","Same observer hopped subsites <3 min apart - mis-selected site?",43,"ad7344df-5453-4b38-944d-062c793e7270",2026-05-20,2026-05-20 11:16:00,"A3","W","Natalia C",11.153100001812,NA
+"RAPID_SUBSITE_HOP","Same observer hopped subsites <3 min apart - mis-selected site?",54,"5a72a324-5cc4-4d22-bfd0-5704238a8699",2026-05-20,2026-05-20 12:01:00,"B1","W","Natalia C",17.5235333283742,NA
+"RAPID_SUBSITE_HOP","Same observer hopped subsites <3 min apart - mis-selected site?",61,"f53f118d-9a5a-41bd-b0e6-d59172283764",2026-05-22,2026-05-22 11:17:00,"A3","T","Natalia C",7.72621666590373,NA
+"RAPID_SUBSITE_HOP","Same observer hopped subsites <3 min apart - mis-selected site?",73,"d55a8948-d4d8-441b-84bf-8eac3f2e5214",2026-05-22,2026-05-22 11:51:00,"B3","T","Natalia C",1.45343333085378,NA
+"RAPID_SUBSITE_HOP","Same observer hopped subsites <3 min apart - mis-selected site?",33,"cf93372d-74c4-4945-8678-9fe766bbfede",2026-05-18,2026-05-18 14:09:00,"A1","W","Natalia C Jessica F",2.40465000073115,NA

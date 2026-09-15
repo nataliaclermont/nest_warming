@@ -5,7 +5,7 @@
 #          and export tidy CSVs ready for downstream analysis.
 #
 # Inputs:  ../raw_data/Pilot Test/iButtons/*.csv      (DS1925 iButtons)
-#          ../raw_data/Pilot Test/*.xlsx               (HOBO loggers)
+#          ../raw_data/Pilot Test/HOBOs/*.xlsx         (HOBO loggers)
 #
 # Outputs: ../clean_data/pilot_ibuttons_clean.csv
 #          ../clean_data/pilot_hobos_clean.csv
@@ -33,23 +33,19 @@ library(lubridate)
 # --- Paths -------------------------------------------------------------------
 
 # Use paths relative to the R project root (nest_warming/)
-raw_dir   <- "../raw_data/Pilot Test"
-clean_dir <- "clean_data"
+# Change raw_dir to desired folder name for different tests
 
-# Create clean_data directory if it doesn't exist
-if (!dir.exists(clean_dir)) dir.create(clean_dir, recursive = TRUE)
+test_name <- "pilot1" # "pilot_06_2026"
+
+raw_dir   <- paste("../raw_data/", test_name, sep="")
+clean_dir <- "clean_data"
 
 # =============================================================================
 # 1. CLEAN iBUTTON DATA
 # =============================================================================
 
-cat("--- Cleaning iButton data ---\n")
-
 ibutton_dir   <- file.path(raw_dir, "iButtons")
 ibutton_files <- list.files(ibutton_dir, pattern = "\\.csv$", full.names = TRUE)
-
-cat("Found", length(ibutton_files), "iButton file(s)\n")
-
 ibutton_list <- lapply(ibutton_files, function(f) {
 
   # Read the full file to extract header metadata
@@ -81,25 +77,32 @@ ibutton_list <- lapply(ibutton_files, function(f) {
 
 ibutton_clean <- bind_rows(ibutton_list)
 
-cat("  Total iButton records:", nrow(ibutton_clean), "\n")
-cat("  Sensors:", paste(unique(ibutton_clean$sensor_id), collapse = ", "), "\n")
-cat("  Date range:", as.character(min(ibutton_clean$datetime)),
-    "to", as.character(max(ibutton_clean$datetime)), "\n")
+# Map to which trap-nest the iButton came from
+map <- read.csv("../raw_data/inventory.csv") %>%
+  filter(sensor_type == "DS1925") %>%
+  select(serial_num, roof_colour, trap_style, trap_id)
+
+ibutton_clean <- ibutton_clean %>%
+  inner_join(map, by = c("sensor_id" = "serial_num"))
 
 # --- Export ------------------------------------------------------------------
 
 write.csv(ibutton_clean,
-          file.path(clean_dir, "pilot_ibuttons_clean.csv"),
+          file.path(clean_dir, paste0(test_name, "_ibuttons_clean.csv")),
           row.names = FALSE)
-cat("  Saved:", file.path(clean_dir, "pilot_ibuttons_clean.csv"), "\n\n")
+cat("  Saved:", file.path(clean_dir, paste0(test_name, "_ibuttons_clean.csv")), "\n\n")
 
 # =============================================================================
 # 2. CLEAN HOBO DATA
 # =============================================================================
 
-cat("--- Cleaning HOBO data ---\n")
-
-hobo_files <- list.files(raw_dir, pattern = "\\.xlsx$", full.names = TRUE)
+# HOBO export filenames start with the logger serial number (digits). The
+# pattern still guards against Excel lock files (~$*.xlsx) or anything else
+# that lands in the HOBOs/ folder.
+hobo_dir   <- file.path(raw_dir, "HOBOs")
+hobo_files <- list.files(hobo_dir,
+                         pattern = "^\\d+ .*\\.xlsx$",
+                         full.names = TRUE)
 
 cat("Found", length(hobo_files), "HOBO file(s)\n")
 
@@ -129,18 +132,14 @@ hobo_list <- lapply(hobo_files, function(f) {
   )
 })
 
-hobo_clean <- bind_rows(hobo_list)
-
-cat("  Total HOBO records:", nrow(hobo_clean), "\n")
-cat("  Sensors:", paste(unique(hobo_clean$sensor_id), collapse = ", "), "\n")
-cat("  Date range:", as.character(min(hobo_clean$datetime)),
-    "to", as.character(max(hobo_clean$datetime)), "\n")
+# Some loggers were downloaded more than once (duplicate filenames with the
+# same serial). Concatenating them produces duplicate (sensor_id, datetime)
+# rows; distinct() collapses them.
+hobo_clean <- bind_rows(hobo_list) %>%
+  distinct(sensor_id, datetime, .keep_all = TRUE)
 
 # --- Export ------------------------------------------------------------------
 
 write.csv(hobo_clean,
-          file.path(clean_dir, "pilot_hobos_clean.csv"),
+          file.path(clean_dir, paste0(test_name, "_hobos_clean.csv")),
           row.names = FALSE)
-cat("  Saved:", file.path(clean_dir, "pilot_hobos_clean.csv"), "\n\n")
-
-cat("--- Done! ---\n")

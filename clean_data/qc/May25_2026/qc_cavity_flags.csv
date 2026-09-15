@@ -1,0 +1,28 @@
+"flag","message","_parent_index","cavity_number","nest_succession","nest_completion","cell_number","nest_notes"
+"CAVITY_DUP","cavity_number appears more than once in the same visit",11,"5","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",11,"5","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",24,"1","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",24,"1","a","empty",NA,"redrilled"
+"CAVITY_DUP","cavity_number appears more than once in the same visit",31,"4","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",31,"4","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",43,"3","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",43,"3","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",70,"3","a","empty",NA,NA
+"CAVITY_DUP","cavity_number appears more than once in the same visit",70,"3","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"1","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"2","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"3","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"4","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"5","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"5","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"6","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"7","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"8","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"9","a","empty",NA,NA
+"NON_10_CAVITIES","Parent visit does not have exactly 10 cavity rows",11,"10","a","empty",NA,NA
+"COMPLETION_NA","nest_completion is NA",4,"4","a",NA,"1",NA
+"PARTIAL_IN_NOTES","nest_notes contains decimal value - cell_number should be re-entered as decimal",49,"9","a","incomplete","1","0.5 cell number"
+"PARTIAL_IN_NOTES","nest_notes contains decimal value - cell_number should be re-entered as decimal",54,"9","a","incomplete","1","0.5 of a cell. Bee seen in nest! Very windy day, she did not move"
+"PARTIAL_IN_NOTES","nest_notes contains decimal value - cell_number should be re-entered as decimal",70,"9","a","abandoned","0","0.3"
+"PARTIAL_IN_NOTES","nest_notes contains decimal value - cell_number should be re-entered as decimal",75,"9","a","incomplete","0","Cell 0.3 completed"
+"PARTIAL_IN_NOTES","nest_notes contains decimal value - cell_number should be re-entered as decimal",102,"9","a","incomplete","1","1.3 cells, bee in nest"
